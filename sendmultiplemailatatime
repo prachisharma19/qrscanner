@@ -1,0 +1,13 @@
+import smtplib as s
+
+ob = s.SMTP('smtp.gmail.com',587)
+ob.ehlo()
+ob.starttls()
+ob.login('prachisharma8992@gmail.com', "prachi1234#")
+subject="test python"
+body = "I love python"
+massage="subject:{}\n\n{}".format(subject,body)
+listadd=['krishsharma3019@gmail.com']
+ob.sendmail('prachisharma8992@gmail.com',listadd,massage)
+print("send a mail")
+ob.quit()
